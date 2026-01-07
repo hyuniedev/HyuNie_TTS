@@ -635,6 +635,8 @@ class VoiceBpeTokenizer:
                 txt = chinese_transliterate(txt)
             if lang == "ko":
                 txt = korean_transliterate(txt)
+        elif lang == "vi":
+            txt = multilingual_cleaners(txt, "en")
         elif lang == "ja":
             txt = japanese_cleaners(txt, self.katsu)
         elif lang == "hi":
